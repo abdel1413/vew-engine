@@ -1,0 +1,31 @@
+<html lang="en">
+      <%- include("./partials/head.ejs") %>
+     <title> Home | <%= title%> </title>
+    <body>
+        <%const test='this is an ejs code for testing' %>
+
+            <%- include("./partials/nav.ejs") %>
+            <div class="blogs content">
+                <p> <%=test%></p>
+                <h2>All Blogs</h2>
+                      
+                       <% if(blogs.length > 0){ %>
+                            <% blogs.forEach(blog =>{ %>
+                            
+                                <h3 class="title">
+                                  <%= blog.title %>   
+                                </h3>
+                                <p class="snippet">
+                                   <%= blog.snippet %>
+                                </p>
+                           <% }) %>
+                      <% } else { %>
+                       <p>there is no data available to display</p> 
+                   <% }
+                       %>
+                         
+            </div>
+
+    </body>
+    <%- include('./partials/footer.ejs') %>
+</html>
