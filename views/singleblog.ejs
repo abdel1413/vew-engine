@@ -1,0 +1,16 @@
+<html>
+
+    <%- include("./partials/head") %>
+    <%= title%>
+    <body>
+    <%- include("./partials/nav") %>
+    <div class="single-blog">
+    <h1>Single Blog Details</h1>
+    <h2><%= blog.title %></h2> 
+    <p><%= blog.snippet %></p> 
+    <p><%= blog.body%></p> 
+    </div>
+    <a class="delete"data-del='<%= blog._id%>'> Delete</a>
+    </body>
+    <%- include("./partials/footer") %>
+</html>

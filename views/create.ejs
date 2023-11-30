@@ -1,12 +1,10 @@
 <html lang="en">
- <%- include("./partials/head.ejs")%>
+    <%- include("./partials/head.ejs") %>
     <body>
-      <%- include("./partials/nav.ejs")%>
-      
-<%const test='this is an ejs code for testing' %>
-            <div class="create-blog content">
-                <p> <%=test%></p>
-                <form>
+      <%- include("./partials/nav.ejs") %>
+
+       <div class="create-blog">
+                <form action='/blogs' method="POST">
                     <label for="title">Blog title:</label>
                     <input type="text" id="title" name="title" required>
                     <label for="snippet">Blog snippet:</label>
@@ -15,10 +13,8 @@
                     <textarea id="body" name="body" required></textarea>
                     <button>Submit</button>
                 </form>
-            </div>
-
-          
+            </div> 
     </body>
-    <%- include("./partials/footer.ejs")%>
+    <%- include("./partials/footer.ejs") %>
 
 </html>

@@ -13,8 +13,12 @@
   "author": "abdel",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "fa": "^1.0.1",
+    "mongoose": "^8.0.1",
+    "morgan": "^1.10.0",
     "nodemon": "^3.0.1"
   }
 }
