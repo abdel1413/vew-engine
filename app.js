@@ -117,6 +117,17 @@ app.get("/blogs/:id", (req, res) => {
     .catch((e) => console.log("error occured ", e));
 });
 
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id)
+    .then((result) => {
+      console.log("result ", result);
+      //send the result as json obj
+      res.json({ redirect: "/blogs" });
+    })
+    .catch((er) => console.error(er));
+});
+
 //not found page
 app.use((req, res) => {
   res.render("404", { title: "404" });

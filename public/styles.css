@@ -74,6 +74,7 @@ h3 {
 
 /* details styles */
 .single-blog {
+  position: relative;
 }
 .single-blog > h1 {
   text-align: center;
@@ -90,9 +91,10 @@ h3 {
   padding: 0.5em;
 }
 .delete:hover {
-  background-color: gainsboro;
+  color: red;
   border-radius: 30px;
-  box-shadow: 2px 3px 3px rgba(114, 111, 111, 0.5);
+  /* box-shadow: 1px 2px 3px rgba(114, 111, 111, 0.5); */
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 /* create styles */

@@ -10,7 +10,39 @@
     <p><%= blog.snippet %></p> 
     <p><%= blog.body%></p> 
     </div>
-    <a class="delete"data-del='<%= blog._id%>'> Delete</a>
+    <a class="delete"data-blog_id='<%= blog._id%>'> Delete</a>
     </body>
     <%- include("./partials/footer") %>
+
+    <script>
+        const del = document.querySelector('a.delete')
+     
+  del.addEventListener('click',(e)=>{
+
+            console.log('id is : '+ del.dataset.blog_id)
+           //get the id of blog and attach it to 
+            //the route  from which you want to delete
+            //the blog
+            const endpoint =`/blogs/${del.dataset.blog_id}`; 
+
+            //use fetch methd to send  as api
+            fetch(endpoint, {
+                method:"DELETE"
+            }).then((response)=> 
+           
+            response.json()
+            )
+               
+            //to redirect on the client side 
+            //we use window.location.href =  value of
+            // response sent from server promise
+            .then(data => window.location.href = data.redirect )
+            .catch(e => console.error(e))
+
+        })
+
+
+
+
+</script>
 </html>
